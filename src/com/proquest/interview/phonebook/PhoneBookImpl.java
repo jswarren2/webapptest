@@ -23,8 +23,9 @@ public class PhoneBookImpl implements PhoneBook {
             try {
                 if(!phoneDAO.insertPerson(newPerson)) {
                     System.out.println("Duplicate phonebook entry");
+                } else {
+                    people.add(newPerson);
                 }
-                people.add(newPerson);
             } catch(Exception e) {
               System.out.println(e.getMessage());
             }
